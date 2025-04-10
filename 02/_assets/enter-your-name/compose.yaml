@@ -1,0 +1,7 @@
+services:
+  deploy:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+      target: build # Use the build stage
+    command: ./build/main
