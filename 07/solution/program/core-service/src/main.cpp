@@ -1,3 +1,4 @@
+// Plantilla de un Menu de Opciones
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
@@ -20,7 +21,6 @@ void convertirNumeroADia();
 void sumarPrimerosNumeros();
 void factorial();
 void invertirNumero4Cifras();
-
 
 int main()
 {
@@ -45,7 +45,6 @@ void clearConsole()
     #endif // defined
 }
 
-// Prototipos de las funciones
 void mostrarMenuPrincipal()
 {
     int opcion;
@@ -54,6 +53,7 @@ void mostrarMenuPrincipal()
     do
     {
         clearConsole();
+
         cout << "\n\n\t\t\tMENU PRINCIPAL" << endl;
         cout << "\t\t\t--------------" << endl;
         cout << "\n\t1. Operaciones basicas" << endl;
@@ -68,15 +68,16 @@ void mostrarMenuPrincipal()
             case 1:
                 mostrarMenuOperacionesBasicas();
                 break;
+
             case 2:
                 mostrarMenuOperacionesVariadas();
                 break;
+
             case 0:
                 repetir = false;
                 break;
         }
-    }
-    while (repetir);
+    } while (repetir);
 }
 
 // Definiciones de las funciones
@@ -105,21 +106,24 @@ void mostrarMenuOperacionesBasicas()
             case 1:
                 sumar();
                 break;
+
             case 2:
                 restar();
                 break;
+
             case 3:
                 multiplicar();
                 break;
+
             case 4:
                 dividir();
                 break;
+
             case 0:
                 repetir = false;
                 break;
         }
-    }
-    while (repetir);
+    } while (repetir);
 }
 
 void mostrarMenuOperacionesVariadas()
@@ -147,25 +151,26 @@ void mostrarMenuOperacionesVariadas()
             case 1:
                 convertirNumeroADia();
                 break;
+
             case 2:
                 sumarPrimerosNumeros();
                 break;
+
             case 3:
                 factorial();
                 break;
+
             case 4:
                 invertirNumero4Cifras();
                 break;
+
             case 0:
                 repetir = false;
                 break;
         }
-    }
-    while (repetir);
+    } while (repetir);
 }
 
-
-// Funciones del submenu Operaciones basicas
 void sumar()
 {
     clearConsole();
@@ -175,7 +180,6 @@ void sumar()
 
     cout << "\n\tSUMA DE DOS NUMEROS";
     cout << "\n\t===================\n";
-
 
     cout << "\n\tIngrese primer numero: ";
     cin >> numero1;
@@ -200,7 +204,6 @@ void restar()
     cout << "\n\tRESTA DE DOS NUMEROS";
     cout << "\n\t====================\n";
 
-
     cout << "\n\tIngrese primer numero: ";
     cin >> numero1;
     
@@ -212,7 +215,6 @@ void restar()
     cout << "\tResultado: " << resultado << endl;
 
     pauseConsole();
-
 }
 
 void multiplicar()
@@ -224,7 +226,6 @@ void multiplicar()
 
     cout << "\n\tPRODUCTO DE DOS NUMEROS";
     cout << "\n\t=======================\n";
-
 
     cout << "\n\tIngrese primer numero: ";
     cin >> numero1;
@@ -260,7 +261,6 @@ void dividir()
     if (numero2 == 0)
     {
         cout << "\tResultado: No se puede dividir por cero." << endl;
-
     }
     else 
     {
@@ -271,8 +271,6 @@ void dividir()
     pauseConsole();
 }
 
-
-// Funciones del submenu Operaciones variadas
 void convertirNumeroADia()
 {
     clearConsole();
