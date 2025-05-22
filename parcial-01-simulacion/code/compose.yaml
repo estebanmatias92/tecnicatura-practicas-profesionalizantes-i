@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: ./core-service
+      target: builder
+    volumes:
+      - cgi-bin:/app/build  # Expose the binary to other services
+
+  server:
+    build:
+      context: ./apache-http
+    ports:
+      - "8080:80"
+    volumes:
+      - cgi-bin:/usr/local/apache2/cgi-bin  # Mount the binary
+    depends_on:
+      - app
+
+volumes:
+  cgi-bin:  # Named volume for sharing
