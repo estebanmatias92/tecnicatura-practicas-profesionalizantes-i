@@ -1,59 +1,61 @@
-# Prácticas Profesionalizantes I - Actividad 08
+# Prácticas Profesionalizantes I - Laboratorio 13
 
 ## Descripción
 
-Esta aplicación Docker Compose despliega un servidor Apache configurado para ejecutar CGI. Incluye un programa en C++ (main.cpp) que genera un formulario HTML y procesa datos enviados por POST, mostrando el nombre ingresado. La configuración de Apache habilita módulos CGI y permite ejecución en /cgi-bin.
+Aplicación CRUD de estudiantes en PHP con MySQL, contenedorizada con Docker y configurada mediante variables en un archivo .env.
 
 ## Características
 
-- Servidor Apache con soporte CGI
-- Procesamiento de formularios HTML
+- Gestión centralizada de configuración mediante archivo .env para parámetros de red, puertos y credenciales del stack.
+- Entorno Dockerizado con servicios desacoplados: Apache/PHP y MySQL listos para levantar con docker compose.
 
 ## Estructura de directorios
 
 ```shell
  .
+├──  .env
 ├──  .gitignore
-├──  apache-http
-│   ├──  config
-│   │    └──  httpd-cgi.conf
-│   └──  Dockerfile
-├──  core-service
-│   ├──  .dockerignore
-│   ├── 󱧼 src
-│   │    └──  main.cpp
-│   ├──  compose.yaml
-│   └──  Dockerfile
 ├──  compose.yaml
+├──  db
+│   └──  script_inicial.sql
+├──  Makefile
+├──  php-crud
+│   ├──  apache-http
+│   │   └──  config
+│   │       └──  httpd.conf
+│   ├──  compose.yaml
+│   ├──  CRUD-PHP-PROTOTIPO-PARA-REFACTORIZAR.code-workspace
+│   ├──  Dockerfile
+│   ├──  LICENSE
+│   ├──  public
+│   │   ├──  config.php
+│   │   ├──  delete.php
+│   │   ├──  includes
+│   │   │   ├──  footer.php
+│   │   │   └──  header.php
+│   │   ├──  index.php
+│   │   ├──  insert.php
+│   │   ├──  style.css
+│   │   ├──  update.php
+│   │   └──  w3.css
+│   └──  README.md
 └──  README.md
 ```
 
 ## Uso
-
-### Para ejecución directa
-
-Compilar con:
-
-```shell
-# From ./core-service
-mkdir -p build
-g++ ./src/main.cpp -o ./build/main
-```
-
-Ejecutar con:
-
-```shell
-# From ./core-service
-./build/main
-```
 
 ### Para despliegue con Docker
 
 Ejecutar el siguiente comando desde directorio raiz
 
 ```shell
-# Levantar todos los servicios
-docker compose up --build
+make up-prod
+```
+
+O para apagar el stack:
+
+```shell
+make down-prod
 ```
 
 ### Para desarrollo
@@ -61,12 +63,16 @@ docker compose up --build
 Ejecutar:
 
 ```shell
-# From ./core-service
-docker compose run --rm dev
+make up-dev
+```
+
+O para apagar el stack:
+
+```shell
+make down-dev
 ```
 
 ## Requisitos
 
-- Compilador C++ (g++ recomendado)
-- Docker (opcional, solo para entornos containerizados)
+- Docker
 - Sistema operativo con terminal
