@@ -1,15 +1,16 @@
-# Prácticas Profesionalizantes I - Actividad 07
+# Prácticas Profesionalizantes I - Actividad 05
 
 ## Descripción
 
-Programa que muestra un menú principal con operaciones básicas y variadas. Permite realizar cálculos matemáticos y conversiones numéricas mediante submenús interactivos.
+Esta actividad consiste en un programa C++ que realiza operaciones básicas (suma y multiplicación)
+con entrada de datos por consola.
 
 ## Características
 
-- Menú principal con opciones para operaciones básicas y variadas
-- Submenú de operaciones básicas (suma, resta, multiplicación, división)
-- Submenú de operaciones variadas (conversión numérica, sumatoria, factorial, inversión de número)
-- Funciones de limpieza de consola y pausa multiplataforma
+- Solicita dos números enteros al usuario
+- Realiza y muestra la suma de los números
+- Realiza y muestra el producto de los números
+- Implementado usando funciones separadas para cada operación
 
 ## Estructura de directorios
 
