@@ -44,8 +44,9 @@ Aplicación CRUD de estudiantes en PHP con MySQL, contenedorizada con Docker y c
 
 ## Uso
 
-La aplicacion sera servida en `localhost:8080`
-phpMyAdmin esta servido en `localhost:8081`
+- La aplicacion sera servida en `localhost:8080`
+- phpMyAdmin esta servido en `localhost:8081`
+- Credenciales guardadas en .env 
 
 ### Para despliegue con Docker
 
