@@ -2,10 +2,15 @@
 *
 !.gitignore
 !README.md
+!*assignments/
+!*exams/
 
 # === Allow only assignment folders ===
-!*/
+!*assignments/*/
+!*exams/2025/
 
 # === Allow code folders and contents ===
-!*/code/
-!*/code/**
+!*assignments/*/code/
+!*assignments/*/code/**
+!*exams/2025/*/code/
+!*exams/2025/*/code/**
