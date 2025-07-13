@@ -139,7 +139,8 @@ dkms.conf
 build/
 bin/
 *.log
-guests.txt
+customer.csv
+nictech.cpp
 
 # Docker, Compose
 #*compose*.yaml
