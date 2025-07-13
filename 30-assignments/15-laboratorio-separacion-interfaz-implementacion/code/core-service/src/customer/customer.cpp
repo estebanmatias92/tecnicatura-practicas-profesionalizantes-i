@@ -5,12 +5,16 @@
  * listing, and searching customer data.
  */
 
-#include "customer.hpp" // Include our own header file
+#include "customer/customer.hpp" // Include our own header file
 #include <iostream>   // For input and output (cin, cout)
 #include <fstream>    // For file handling (ifstream, ofstream)
 #include <limits>     // For std::numeric_limits
 #include <iomanip>    // For formatting output (setw, left)
 #include <sstream>    // For string stream operations (parsing CSV lines)
+
+// --- Global Variable Definition ---
+// Define CUSTOMERS_FILE_NAME here, as it's declared extern in customer.hpp
+const char* CUSTOMERS_FILE_NAME = "customers.csv";
 
 /**
  * @brief Displays the main menu options for the customer management system.

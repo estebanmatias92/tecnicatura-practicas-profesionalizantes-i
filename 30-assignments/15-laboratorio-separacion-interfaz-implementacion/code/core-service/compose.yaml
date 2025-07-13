@@ -13,6 +13,7 @@ services:
       # This ensures any changes you make on your host are reflected,
       # and the pre-built binary from the image (in /app/build) is also available.
       - ./src:/app/src
+      - ./include:/app/include # NUEVA LÍNEA: Monta el directorio 'include'
     command: bash # Start bash for interactive development
     profiles: ["interactive"] # Assigns this service to the 'interactive' profile
 

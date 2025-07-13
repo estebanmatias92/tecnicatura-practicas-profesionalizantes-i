@@ -5,7 +5,7 @@
  * a menu-driven interface for customer operations.
  */
 
-#include "customer.hpp" // Include the customer module header
+#include "customer/customer.hpp" // Corrected include path
 #include <iostream>   // For input and output (cin, cout)
 #include <limits>     // For std::numeric_limits
 

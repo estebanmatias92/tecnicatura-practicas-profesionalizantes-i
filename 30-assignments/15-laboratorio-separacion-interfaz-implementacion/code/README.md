@@ -19,23 +19,31 @@ Programa en C++ para gestión completa de clientes con persistencia en archivos,
 - **Validaciones y seguridad**:  
   - Límite máximo de clientes  
   - Manejo seguro de entrada/salida  
-- **Interfaz intuitiva**:  
-  - Menú interactivo claro  
-  - Formateo profesional de salidas  
+- **Modularizacion por archivos**
+  - Tiene una estructura modular
+  - Separa implementación y especificación 
+
 
 ## Estructura de directorios
 
 ```shell
- .
-├──  .env
-├──  .gitignore
+ code
 ├──  compose.yaml
 ├──  core-service
-│   ├──  .dockerignore
 │   ├──  compose.yaml
+│   ├──  data
+│   │   └──  customers.csv
 │   ├──  Dockerfile
-│   └── 󱧼 src
-│       └──  main.cpp
+│   ├──  docs
+│   ├──  include
+│   │   └──  customer
+│   │       └──  customer.hpp
+│   ├── 󱧼 src
+│   │   ├──  app
+│   │   │   └──  main.cpp
+│   │   └──  customer
+│   │       └──  customer.cpp
+│   └── 󰙨 tests
 ├──  Makefile
 └──  README.md
 ```
@@ -49,7 +57,7 @@ Compilar con:
 ```shell
 # From ./core-service
 mkdir -p build
-g++ ./src/main.cpp -o ./build/main
+g++  src/app/main.cpp src/customer/customer.cpp -Iinclude -o build/main
 ```
 
 Ejecutar con:

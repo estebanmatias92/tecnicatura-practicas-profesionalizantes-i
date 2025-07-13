@@ -5,8 +5,8 @@
  * along with prototypes for functions to manage customer data and file operations.
  */
 
-#ifndef CUSTOMER_H
-#define CUSTOMER_H
+#ifndef CUSTOMER_HPP
+#define CUSTOMER_HPP
 
 #include <string> // For std::string
 
@@ -17,8 +17,9 @@
 
 /**
  * @brief The name of the CSV file used for storing customer data.
+ * Declared as extern to avoid multiple definition errors when included in multiple .cpp files.
  */
-const char* CUSTOMERS_FILE_NAME = "customers.csv";
+extern const char* CUSTOMERS_FILE_NAME; // Declared as extern
 
 // --- Type Definitions ---
 
@@ -112,4 +113,4 @@ void searchCustomerByCode(const tCustomerList* list, int code);
  */
 void displayMenu();
 
-#endif // CUSTOMER_H
+#endif // CUSTOMER_HPP
