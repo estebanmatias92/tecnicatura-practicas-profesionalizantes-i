@@ -4,18 +4,18 @@
 // --- IMPLEMENTACIÓN DEL CONSTRUCTOR ---
 Cell::Cell(const std::string& name, const std::string& dna, int mitochondriaCount)
     : organismName(name),
-      nucleus(nullptr),   // <-- CAMBIO: Buena práctica inicializar punteros a nullptr.
-      membrane(nullptr),  // <-- CAMBIO: Buena práctica inicializar punteros a nullptr.
+      nucleus(nullptr),
+      membrane(nullptr),
       energyLevel(20)
 {
     // Usamos 'new' para reservar memoria manualmente para cada componente.
-    nucleus = new Nucleus(dna);     // <-- CAMBIO: De std::make_unique a new
-    membrane = new CellMembrane();  // <-- CAMBIO: De std::make_unique a new
+    nucleus = new Nucleus(dna);
+    membrane = new CellMembrane();
 
     // Creamos el número especificado de mitocondrias en el heap.
     for (int i = 0; i < mitochondriaCount; ++i)
     {
-        mitochondria.push_back(new Mitochondrion()); // <-- CAMBIO: Guardamos un nuevo puntero.
+        mitochondria.push_back(new Mitochondrion());
     }
 }
 
