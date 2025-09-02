@@ -19,7 +19,7 @@ This is a simple C++ application built with FLTK (Fast Light Toolkit) that demon
 ├──  core-service
 │   ├──  compose.yaml
 │   ├──  data
-│   │   └──  customers.csv
+│   │   └──  dummy-db.csv
 │   ├──  Dockerfile
 │   ├──  docs
 │   ├──  include
