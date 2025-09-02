@@ -14,6 +14,13 @@ services:
       # and the pre-built binary from the image (in /app/build) is also available.
       - ./src:/app/src
       - ./include:/app/include # NUEVA LÍNEA: Monta el directorio 'include'
+      - /tmp/.X11-unix:/tmp/.X11-unix # Keep X11 for XWayland compatibility
+      - ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR}
+    environment:
+      - WAYLAND_DISPLAY=wayland-1
+      - FLTK_BACKEND=wayland
+      - XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}
+    user: "${UID}"
     command: bash # Start bash for interactive development
     profiles: ["interactive"] # Assigns this service to the 'interactive' profile
 
@@ -25,6 +32,14 @@ services:
       dockerfile: Dockerfile
       target: development
     command: /app/build/main # Runs the compiled binary directly
+    environment:
+      - WAYLAND_DISPLAY=wayland-1
+      - FLTK_BACKEND=wayland
+      - XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix # Keep X11 for XWayland compatibility
+      - ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR}
+    user: "${UID}"
     # This service has no 'profiles' key, so it's part of the default set
     # that starts with 'docker compose up' without any profile specified.
 

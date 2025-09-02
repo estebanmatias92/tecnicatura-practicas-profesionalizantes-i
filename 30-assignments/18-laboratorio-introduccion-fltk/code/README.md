@@ -1,30 +1,17 @@
-# Prácticas Profesionalizantes I - Unidad 03 - Laboratorio 10- Separación Interfaz Implementación
+# FLTK Button Application
 
-## Descripción
+## Description
 
-Programa en C++ para gestión completa de clientes con persistencia en archivos, que permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre registros de clientes.
+This is a simple C++ application built with FLTK (Fast Light Toolkit) that demonstrates basic GUI programming. It creates a window with a button, and when the button is pressed, it changes the text displayed in a text box.
 
-## Características
+## Features
 
-- **Gestión completa de clientes**:  
-  - Altas con generación automática de códigos  
-  - Bajas por código de cliente  
-  - Modificación de datos existentes  
-- **Búsqueda y listado**:  
-  - Listado completo con formato tabular  
-  - Búsqueda individual por código  
-- **Persistencia de datos**:  
-  - Carga automática al iniciar  
-  - Guardado automático al modificar  
-- **Validaciones y seguridad**:  
-  - Límite máximo de clientes  
-  - Manejo seguro de entrada/salida  
-- **Modularizacion por archivos**
-  - Tiene una estructura modular
-  - Separa implementación y especificación 
+- Simple Graphical User Interface (GUI)
+- Interactive button that triggers a text change
+- Basic FLTK window and widget management
+- Modularized codebase for better organization
 
-
-## Estructura de directorios
+## Directory Structure
 
 ```shell
  code
@@ -36,65 +23,42 @@ Programa en C++ para gestión completa de clientes con persistencia en archivos,
 │   ├──  Dockerfile
 │   ├──  docs
 │   ├──  include
-│   │   └──  customer
-│   │       └──  customer.hpp
+│   │   └──  fltk_button
+│   │       └──  FltkButtonApp.h
 │   ├── 󱧼 src
-│   │   ├──  app
-│   │   │   └──  main.cpp
-│   │   └──  customer
-│   │       └──  customer.cpp
+│   │   └──  app
+│   │       ├──  fltk_button
+│   │       │   └──  FltkButtonApp.cpp
+│   │       └──  main.cpp
 │   └── 󰙨 tests
 ├──  Makefile
 └──  README.md
 ```
 
-## Uso
+## Usage
 
-### Para ejecución directa
+### For Development (Docker)
 
-Compilar con:
-
-```shell
-# From ./core-service
-mkdir -p build
-g++  src/app/main.cpp src/customer/customer.cpp -Iinclude -o build/main
-```
-
-Ejecutar con:
+To build and run the application with a fresh build (no cache):
 
 ```shell
-# From ./core-service
-./build/main
-```
-
-### Para despliegue con Docker
-
-Ejecutar el siguiente comando desde directorio raiz:
-
-```shell
-# With Make
-make up-prod
-
-# With compose
-docker compose up --build
-```
-
-### Para desarrollo
-
-Ejecutar:
-
-```shell
-# With Make
 make run-dev
-
-# With compose from ./core-service
-docker compose --profile interactive run --rm dev_interactive
 ```
 
-## Requisitos
+To run the application with cached build (if available):
+
+```shell
+make run-dev
+```
+
+For interactive development (e.g., to get a shell inside the container):
+
+```shell
+make dev-interactive
+```
+
+## Requirements
 
 - Compilador C++ (g++ recomendado)
-
 - Docker (opcional, solo para entornos containerizados)
-
 - Sistema operativo con terminal

@@ -23,6 +23,9 @@ up-dev:
 run-dev:
 	docker compose -f ./core-service/compose.yaml --env-file .env run -it --rm --remove-orphans --build run_dev_app 
 
+dev-interactive:
+	docker compose -f ./core-service/compose.yaml --env-file .env run -it --rm --remove-orphans --build dev_interactive
+
 down-dev:
 	docker compose -f ./core-service/compose.yaml down
 
